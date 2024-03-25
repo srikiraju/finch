@@ -2,16 +2,15 @@
 
 stage:
   name: setup
-  stats:
-    disable: true
+  runtime: 600s
   workload:
     - clients: 1                  #
       group: schema               # exec group "schema"
       trx: [schema.sql]           #
-    - clients: 2                    #
+    - clients: $params.clients
       group: rows                   #
       trx: [insert-cust-bal.sql]    # exec group "rows"
-    - clients: 2                    #
+    - clients: $params.clients
       group: rows                   #
       trx: [insert-xfers.sql]       #
 

@@ -1,11 +1,11 @@
 # https://square.github.io/finch/benchmark/examples/#xfer
 
 params:
-  customers: 1,000,000 # + 3 balances per customer (4M rows total)
+  customers: 1,000,000,000 # + 3 balances per customer (4M rows total)
   active: 20           # % of customers between lower and upper
   lower: 500,000       
   upper: 1,000,000
-  xfers-size: 1GiB  # about 2.3M rows
+  xfers-size: 5000GiB
   clients: $sys.CPU_CORES # override on command line like "-p clients=2"
 
 stats:
